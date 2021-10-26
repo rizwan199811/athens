@@ -1,0 +1,8 @@
+steps:
+# Install dependencies
+  - name: node:12.0
+    entrypoint: npm
+    args: ['install']
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["app", "deploy","--version=devclient"]
+    timeout: "1600s"
